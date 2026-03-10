@@ -40,30 +40,34 @@ export const viewport: Viewport = {
 
 const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
 });
 const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
 });
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "bg-background text-foreground min-h-screen font-sans antialiased",
-          geistSans.variable,
-          geistMono.variable,
-        )}
-      >
-        <ThemeProvider>
-          <TRPCReactProvider>{props.children}</TRPCReactProvider>
-          <div className="absolute right-4 bottom-4">
-            <ThemeToggle />
-          </div>
-          <Toaster />
-        </ThemeProvider>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(
+        "bg-background text-foreground min-h-screen font-sans antialiased",
+        geistSans.variable,
+        geistMono.variable,
+      )}
+    >
+      <body>
+        <div style={{ display: "contents" }}>
+          <ThemeProvider>
+            <TRPCReactProvider>{props.children}</TRPCReactProvider>
+            <div className="absolute right-4 bottom-4">
+              <ThemeToggle />
+            </div>
+            <Toaster />
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );

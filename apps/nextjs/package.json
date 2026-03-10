@@ -25,10 +25,16 @@
     "@trpc/server": "catalog:",
     "@trpc/tanstack-react-query": "catalog:",
     "better-auth": "catalog:",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.577.0",
     "next": "^16.0.9",
+    "radix-ui": "^1.4.3",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
+    "shadcn": "^4.0.2",
     "superjson": "2.2.3",
+    "tailwind-merge": "^3.3.1",
     "zod": "catalog:"
   },
   "devDependencies": {

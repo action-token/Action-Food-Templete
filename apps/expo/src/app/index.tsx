@@ -107,17 +107,10 @@ function MobileAuth() {
         {session?.user.name ? `Hello, ${session.user.name}` : "Not logged in"}
       </Text>
       <Pressable
-        onPress={() =>
-          session
-            ? authClient.signOut()
-            : authClient.signIn.social({
-                provider: "discord",
-                callbackURL: "/",
-              })
-        }
+        onPress={() => session && authClient.signOut()}
         className="bg-primary flex items-center rounded-sm p-2"
       >
-        <Text>{session ? "Sign Out" : "Sign In With Discord"}</Text>
+        <Text>{session ? "Sign Out" : "No auth provider configured"}</Text>
       </Pressable>
     </>
   );
