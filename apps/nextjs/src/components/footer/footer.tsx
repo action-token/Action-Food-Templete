@@ -75,7 +75,7 @@ export function Footer() {
     <footer className="bg-background text-foreground dark py-16">
       <div className="container">
         <div className="">
-          <div className="grid grid-cols-2 gap-14 md:grid-cols-4 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-14 md:grid-cols-4 lg:grid-cols-5">
             <div className="grid gap-3 max-md:col-span-2">
               <figure>
                 <Logo className="w-16 h-5" />
