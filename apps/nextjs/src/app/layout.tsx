@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 
 import { cn } from "@actionverse/ui";
 import { ThemeProvider, ThemeToggle } from "@actionverse/ui/theme";
@@ -10,25 +10,15 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 import "~/app/styles.css";
 
+import { Header } from "~/components/header/header";
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     env.VERCEL_ENV === "production"
       ? "https://turbo.t3.gg"
       : "http://localhost:3000",
   ),
-  title: "Create T3 Turbo",
-  description: "Simple monorepo with shared backend for web & mobile apps",
-  openGraph: {
-    title: "Create T3 Turbo",
-    description: "Simple monorepo with shared backend for web & mobile apps",
-    url: "https://create-t3-turbo.vercel.app",
-    siteName: "Create T3 Turbo",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@jullerino",
-    creator: "@jullerino",
-  },
+  title: "Efood",
 };
 
 export const viewport: Viewport = {
@@ -38,7 +28,7 @@ export const viewport: Viewport = {
   ],
 };
 
-const geistSans = Geist({
+const geistSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -61,11 +51,14 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <div style={{ display: "contents" }}>
           <ThemeProvider>
-            <TRPCReactProvider>{props.children}</TRPCReactProvider>
-            <div className="absolute right-4 bottom-4">
-              <ThemeToggle />
-            </div>
-            <Toaster />
+            <TRPCReactProvider>
+              <Header />
+              {props.children}
+              <div className="absolute right-4 bottom-4">
+                <ThemeToggle />
+              </div>
+              <Toaster />
+            </TRPCReactProvider>
           </ThemeProvider>
         </div>
       </body>
