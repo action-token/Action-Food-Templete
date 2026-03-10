@@ -1,0 +1,7 @@
+{
+  "name": "@actionverse/tsconfig",
+  "private": true,
+  "files": [
+    "*.json"
+  ]
+}
