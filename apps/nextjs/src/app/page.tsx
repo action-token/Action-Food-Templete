@@ -1,7 +1,11 @@
+import { TodaysSelectionSlider } from "./_components/todays-selection-slider";
+
 export default function HomePage() {
   return (
-    <main className="container flex h-screen items-center justify-center">
-      Main content
+    <main className="py-10 sm:py-14">
+      <div className="container relative overflow-hidden">
+        <TodaysSelectionSlider />
+      </div>
     </main>
   );
 }
