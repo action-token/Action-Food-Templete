@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 
 import { cn } from "@actionverse/ui";
-import { ThemeProvider, ThemeToggle } from "@actionverse/ui/theme";
+import { ThemeProvider } from "@actionverse/ui/theme";
 import { Toaster } from "@actionverse/ui/toast";
 
 import { env } from "~/env";
@@ -54,9 +54,6 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <TRPCReactProvider>
               <Header />
               {props.children}
-              <div className="absolute right-4 bottom-4">
-                <ThemeToggle />
-              </div>
               <Toaster />
             </TRPCReactProvider>
           </ThemeProvider>

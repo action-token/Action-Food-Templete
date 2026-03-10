@@ -14,7 +14,7 @@ import { UserDropdown } from "./user-dropdown";
 export const Header = () => {
   return (
     <header className="bg-background/95 sticky top-0 saturate-150 backdrop-blur-2xl">
-      <div className="container flex h-15 items-center justify-between">
+      <div className="container flex h-15 items-center justify-between gap-3">
         <div className="flex items-center gap-6">
           <Link href="/">
             <Logo className="text-accent h-5 w-16" />
@@ -24,26 +24,31 @@ export const Header = () => {
           <div className="text-sm">Categories</div>
         </div>
 
-        <div className="absolute left-1/2 flex -translate-x-1/2 items-center">
+        <div className="relative flex items-center md:absolute md:left-1/2 md:-translate-x-1/2">
           <MagnifyingGlassIcon
             weight="bold"
             className="text-muted-foreground absolute left-4 size-5"
           />
           <Input
             placeholder="Are you hungry?"
-            className="bg-muted text-foreground! h-11 w-94 rounded-full border-transparent pr-4 pl-12"
+            className="bg-muted text-foreground! h-11 w-full rounded-full border-transparent pr-4 pl-12 md:w-94"
           />
         </div>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon-lg">
+          <Button variant="ghost" size="icon-lg" className="max-md:hidden">
             <HeartIcon weight="bold" />
             <span className="sr-only">Wishlist</span>
           </Button>
           <Button variant="ghost" size="icon-lg">
             <CallBellIcon weight="bold" />
             <span className="sr-only">Wishlist</span>
-            <Badge variant="secondary" className="absolute rounded top-0 -right-1/5 bg-muted/15">12</Badge>
+            <Badge
+              variant="secondary"
+              className="bg-muted/15 absolute top-0 -right-1/5 rounded"
+            >
+              12
+            </Badge>
           </Button>
 
           <UserDropdown />
