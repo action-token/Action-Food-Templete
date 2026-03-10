@@ -14,7 +14,7 @@ import { UserDropdown } from "./user-dropdown";
 
 export const Header = () => {
   return (
-    <header className="bg-background/95 sticky top-0 z-[70] saturate-150 backdrop-blur-2xl">
+    <header className="bg-background/95 sticky top-0 z-70 saturate-150 backdrop-blur-2xl">
       <div className="container flex h-15 items-center justify-between gap-3">
         <div className="flex items-center gap-6">
           <Link href="/">

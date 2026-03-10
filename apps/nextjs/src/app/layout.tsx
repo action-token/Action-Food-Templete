@@ -10,6 +10,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 import "~/app/styles.css";
 
+import { Footer } from "~/components/footer/footer";
 import { Header } from "~/components/header/header";
 
 export const metadata: Metadata = {
@@ -54,6 +55,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <TRPCReactProvider>
               <Header />
               {props.children}
+              <Footer />
               <Toaster />
             </TRPCReactProvider>
           </ThemeProvider>
