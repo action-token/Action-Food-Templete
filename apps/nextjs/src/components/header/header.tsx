@@ -9,11 +9,12 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Logo } from "../ui/logo";
+import { CategoriesMegaMenu } from "./categories-mega-menu";
 import { UserDropdown } from "./user-dropdown";
 
 export const Header = () => {
   return (
-    <header className="bg-background/95 sticky top-0 saturate-150 backdrop-blur-2xl">
+    <header className="bg-background/95 sticky top-0 z-[70] saturate-150 backdrop-blur-2xl">
       <div className="container flex h-15 items-center justify-between gap-3">
         <div className="flex items-center gap-6">
           <Link href="/">
@@ -21,7 +22,7 @@ export const Header = () => {
             <span className="sr-only">Efood</span>
           </Link>
 
-          <div className="text-sm">Categories</div>
+          <CategoriesMegaMenu />
         </div>
 
         <div className="relative flex items-center md:absolute md:left-1/2 md:-translate-x-1/2">
