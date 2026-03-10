@@ -3,14 +3,13 @@ import {
   CallBellIcon,
   HeartIcon,
   MagnifyingGlassIcon,
-  UserIcon,
 } from "@phosphor-icons/react/ssr";
 
-import { Avatar, AvatarFallback } from "../ui/avatar";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Logo } from "../ui/logo";
+import { UserDropdown } from "./user-dropdown";
 
 export const Header = () => {
   return (
@@ -47,11 +46,7 @@ export const Header = () => {
             <Badge variant="secondary" className="absolute rounded top-0 -right-1/5 bg-muted/15">12</Badge>
           </Button>
 
-          <Avatar>
-            <AvatarFallback>
-              <UserIcon weight="bold" />
-            </AvatarFallback>
-          </Avatar>
+          <UserDropdown />
         </div>
       </div>
     </header>
